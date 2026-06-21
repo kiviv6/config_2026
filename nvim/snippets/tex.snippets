@@ -1,0 +1,615 @@
+# -- SNIPPETS --
+
+# new glossary entry
+snippet gloss "Glossary Entry"  b
+	\newglossaryentry{${1:entry}}{
+			name = {${2:name}},
+			symbol = {\ensuremath{${3:symbol}}},
+			description = {${4:description}}
+	}
+#
+
+# custom theorem enviornment
+snippet customthm "Custom Theorem" b
+	\vspace{.1in}
+	\begin{customthm}{(${1:label})}
+		${2:claim}
+	\end{customthm}
+
+	\begin{Answer}
+		${0}
+	\end{Answer}
+#
+
+# framed text enviornment
+snippet textbox "Text Box" b
+	\begin{tcolorbox}
+		${0}
+	\end{tcolorbox}
+#
+
+# new command
+snippet nc "New Command" b
+	\newcommand{${1:cmd}}[${2:opt}]{${3:realcmd}} ${0}
+#
+
+#usepackage
+snippet up "Use Package" b
+	\usepackage[${1:options}]{${2:package}} ${0}
+#
+
+# \begin{}...\end{}
+snippet beg "Begin End"
+	\begin{${1:env}}
+		${2:${VISUAL}}
+	\end{$1}${0}
+#
+
+# Align(ed)
+snippet ali "Align Env" b
+	\begin{align${1:ed}}
+		\label{${2:name}}
+		${0}
+	\end{align$1}
+#
+
+# Quote
+snippet quote "Quotation" b
+	\vspace{-.1in}
+	\begin{quote}\singlespacing\small
+		${0}
+		\hfill(p.~${1})
+	\end{quote}
+	\vspace{.1in}
+#
+
+# Labelalign
+snippet labelalign "Label Align" b
+	\vspace{.05in}
+	\begin{labelalign} %\small\onehalfspacing
+		\item[${2:\it} ${3:Label:}] ${0}
+	\end{labelalign}
+	\vspace{.05in}
+#
+
+# Enumerate
+snippet enum "Enumerate" b
+	\begin{enumerate}
+		\item[${1:\it }${2:Label:}] ${0}
+	\end{enumerate}
+#
+
+# Itemize
+snippet item "Itemize" b
+	\begin{itemize}
+		\item[${1}] ${0}
+	\end{itemize}
+#
+
+#Item
+snippet i "Item"
+	\item[${1}] ${0}
+#
+
+# Cases
+snippet case "Cases" 
+	${1:LHS}=	
+	\begin{cases}
+		${2:Value}, &\text{ if } ${3:case}\\
+		${4:Value}, &\text{ otherwise.} ${5:otherwise}.
+	\end{cases}${0}
+#
+
+# Section
+snippet sec "Section" b
+	\section{${1:Name}}%
+		\label{sec:${2:$1}}
+		${0}
+#
+
+# Sub Section
+snippet sub "Sub Section" b
+	\subsection{${1:Name}}%
+		\label{sub:${2:$1}}
+		${0}
+#
+
+# Sub Sub Section
+snippet ssub "Sub Sub Section" b
+	\subsubsection{${1:Name}}%
+		\label{sub:${2:$1}}
+		${0}
+#
+
+snippet ssub* "Sub Sub* Section" b
+  \subsubsection*{${1}}
+  ${0}
+
+
+# Hyper Section
+snippet hsec "Hyper Section" b
+	\hypsection{${1:Name}}%
+		\label{sec:${2:$1}}
+		${0}
+#
+
+# Hyper Sub Section
+snippet hsub "Hyper Sub Section" b
+	\hypsubsection{${1:Name}}%
+		\label{sub:${2:$1}}
+		${0}
+#
+
+# Hyper Sub Sub Section
+snippet hssub "Hyper Sub Sub Section" b
+	\hypsubsubsection{${1:Name}}%
+		\label{sub:${2:$1}}
+		${0}
+#
+
+#Formating text: italic, bold, underline, small capital, emphase ..
+snippet it "Italics" wi
+	\textit{${1}}${0}
+#
+
+snippet tt "Teletype" wi
+	\texttt{${1}}${0}
+#
+
+snippet bf "Bold" wi
+	\textbf{${1}}${0}
+#
+
+snippet sc "Small Caps" wi
+	\textsc{${1}}${0}
+#
+
+snippet tsub "Subscripted" i
+	\textsubscript{${1}}${0}
+#
+
+snippet tsup "Superscripted" i
+	\textsuperscript{${1}}${0}
+#
+
+#Math font
+snippet mf "Mathfrak" w
+	\mathfrak{${1}}${0}
+#
+
+snippet mc "Mathcal" w
+	\mathcal{${1}}${0}
+#
+
+snippet ms "Mathscr" w
+	\mathscr{${1}}${0}
+#
+
+#misc
+snippet fproof "Footnote Proof" bi
+	\footnote{\textit{Proof:} ${1:Begin} \qed}${0}
+#
+
+snippet lab "Label" wi
+	\label{${1:LABEL}}${0}
+#
+
+snippet fn "Footnote" wi
+	\footnote{${1:FOOTNOTE}}${0}
+#
+
+snippet fig "Figure environment" b
+	\begin{figure}[${5:H}]
+	\begin{center}
+		\includegraphics[width=${1}\textwidth]{${2}}
+	\end{center}
+	\caption{${3}}
+	\label{fig:${4}}
+	\end{figure}
+	${0}
+#
+
+snippet tikz "Tikz environment" b
+	\begin{figure}[htpb]
+	\begin{center}
+	\begin{tikzpicture}[scale=${1:1}, transform shape]
+		${2}
+	\end{tikzpicture}
+	\end{center}
+	\caption{${3}}%
+	\label{fig:${4}}
+	\end{figure}
+	${0}
+
+snippet lemma "Lemma" bi
+	\begin{Lthm} \label{${1:label}}
+		${0:${VISUAL}}
+	\end{Lthm}
+
+snippet prop "Proposition" bi
+	\begin{Pthm} \label{${1:label}}
+		${0:${VISUAL}}
+	\end{Pthm}
+
+snippet thrm "Theorem" bi
+	\begin{theorem} \label{${1:label}}
+		${0:${VISUAL}}
+	\end{theorem}
+
+snippet prf "Proof" bi
+	\begin{proof} 
+		${0:${VISUAL}}
+	\end{proof}
+
+snippet prob "Problem" bi
+	\begin{problem}[$1]
+		${0:${VISUAL}}
+	\end{problem}
+
+snippet corl "Corollary" bi
+	\begin{corollary}[$1]
+		${0:${VISUAL}}
+	\end{corollary}
+
+snippet example "Example" bi
+	\begin{example}[$1]
+		${0:${VISUAL}}
+	\end{example}
+
+snippet => "implies" Ai
+	\implies 
+
+snippet =< "implied by" Ai
+	\impliedby 
+
+snippet iff "iff" Ai
+	\iff 
+
+snippet mk "Math" wA
+	$${1}$
+
+snippet dm "Math" wA
+	\[
+	${1:${VISUAL}}
+	\] $0
+
+snippet frac "Fraction" iA
+	\\frac{$1}{$2}$0
+
+snippet inn "in " iA
+	\in 
+
+snippet notin "not in " iA
+	\not\in 
+
+snippet RR "real" iA
+	\mathbb{R}
+
+snippet CC "C" iA
+	\mathbb{C}
+
+snippet NN "N" iA
+	\mathbb{N}
+
+snippet ZZ "Z" iA
+	\mathbb{Z}
+
+snippet FF "F" iA
+  \mathbb{F} 
+
+snippet QQ "Q" iA
+  \mathbb{Q}
+
+snippet dint "integral" iA
+	\int_{${1}}^{${2}} ${3} \,d${4} $0
+
+snippet int "integral" wA 
+	\int ${1} \,d${2} $0
+
+snippet lim "limit" w
+	\lim_{${1} \to ${2}} 
+
+snippet sum "sum" w
+	\sum_{${1}=${2}}^{${3}} ${4} $0
+
+snippet sq "\sqrt{}" iA
+	\sqrt{${1:${VISUAL}}} $0
+
+snippet td "to the ... power" iA
+	^{$1}$0
+
+snippet __ "subscript" iA
+	_{$1}$0
+
+snippet qstn "Question" iA
+	\begin{question}{$1}{}
+		${0:${VISUAL}}
+	\end{question}
+
+snippet qstn* "Question*" iA
+  \begin{question*}{$1}{}
+		${0:${VISUAL}}
+  \\end{question*}
+
+
+#snippet def "definition" iA
+#	\begin{definition}[colbacktitle=red!75!black]{$1}{}
+#		${0:${VISUAL}}
+#	\end{definition}
+
+snippet def "definition" iA
+  \begin{definition}[label=def:$3]{$1}{}
+    ${0:${VISUAL}}
+  \end{definition}
+
+snippet sol "solution" iA
+	 \sol \\\\
+	
+
+snippet note "note" iA
+	\begin{note}
+		${0:${VISUAL}}
+	\end{note}
+
+snippet appr "approx" iA
+	\approx 
+
+snippet un "unit" iA
+	\;\unit{${1}} 
+
+snippet eq "equation" iA
+	\begin{equation*}
+	\begin{split}
+	${0:${VISUAL}}
+	\end{split}
+	\end{equation*}
+
+snippet dv "derivative" iA
+	\dv{${1}} $0
+
+snippet pdv "partial derivative" iA
+  \pdv{${1}} $0
+
+snippet func "function" iA
+	${1}(${2})= $0
+
+snippet ce "chemistry" iA
+	\ce{${1}} $0
+
+snippet dot "cdot" iA
+	\cdot 
+
+snippet ldots "ldots" iA
+  \ldots 
+
+snippet cdots "cdots" iA
+  \cdots 
+
+snippet cref "cleveref" iA
+	\cref{${1}} $0
+
+snippet ref "reference" iA
+  \ref{${1}} $0
+
+snippet qty "quantity" iA
+	\qty{${1}}{${2}}$0
+
+snippet par "parentheses" iA
+	\left(${1}\right) $0
+
+snippet 1ex "new line" iA
+	\\\[1ex]
+	$0
+
+snippet txt "text" iA
+	\text{${1}} $0
+
+snippet deg "degrees" iA
+	\degree 
+
+snippet abs "absolute value" iA
+	\abs{${1}} $0
+
+snippet cvec "column vector" iA
+	\mqty(${1}\\\\ ${2}) $0
+
+snippet vec "vector" iA
+	\va{${1}} $0
+
+snippet vvec "vector with more letters" iA
+	\overrightarrow{\textbf{${1}}} $0
+
+snippet ort "orthogonal" iA
+	\perp 
+
+snippet para "parallel" iA
+	\parallel 
+
+snippet det "determinant" iA
+	\mdet{${1} & ${2} \\\\ ${3} & ${4}} $0
+
+snippet sec* "section*" iA
+	\section*{${1}}
+	$0
+
+snippet sub* "subsection*" iA
+	\subsection*{${1}}
+	$0
+
+snippet theo "Theorem" iA
+	\begin{theorem}[label=theo:$3]{$1}{}
+		${2:${VISUAL}}
+	\end{theorem}
+	$0
+
+snippet exa "Example" Ai
+	\begin{example}[label=exa:$3]{$1}{}
+		${2:${VISUAL}}
+	\end{example}
+	$0
+
+snippet bra "Brackets" Ai
+  \left[${1}\right]$0
+
+snippet leq "Less than or equal" Ai
+  \leq 
+
+snippet geq "Greater or equal" Ai
+  \geq
+snippet exp "Exponential" Ai
+  e^{${1}} $0
+
+snippet ln "Natural log" Ai
+  \ln\left(${1}\right) $0
+
+snippet log "Log" Ai
+  \log\left(${1}\right) $0
+
+snippet cos "Cosine" Ai
+  \cos\left(${1}\right) $0
+
+snippet sin "Sine" Ai
+  \sin\left(${1}\right) $0
+
+snippet tan "Tangent" Ai
+  \tan\left(${1}\right) $0
+
+snippet arcsin "Arcsin" Ai
+  \sin^{-1}\left(${1}\right) $0
+
+snippet arccos "Arccos" Ai
+  \cos^{-1}\left(${1}\right) $0
+
+snippet arctan "Arctan" Ai
+  \tan^{-1}\left(${1}\right) $0
+
+snippet pm "Plus minus" Ai
+  \pm
+
+snippet lor "Logical or" Ai
+  \lor
+
+snippet land "Logical and" Ai
+  \land
+
+snippet pi "pi" Ai
+  \pi 
+
+snippet omega "omega" Ai
+  \omega 
+
+snippet Delta "Delta" Ai
+  \Delta 
+
+snippet gamma "gamma" Ai
+  \gamma 
+
+snippet phi "phi" Ai
+  \phi 
+
+snippet theta "theta" Ai
+  \theta 
+
+snippet rho "rho" Ai
+  \rho 
+
+snippet mu "mu" Ai
+  \mu 
+
+snippet eps "epsilon" Ai
+  \epsilon 
+
+snippet vareps "varepsilon" Ai
+  \varepsilon 
+
+snippet lambda "lambda" Ai
+  \lambda 
+
+snippet alpha "alpha" Ai
+  \alpha 
+
+snippet beta "beta" Ai
+  \beta 
+
+snippet delta "delta" Ai
+  \delta 
+
+snippet sigma "sigma" Ai
+  \sigma 
+
+snippet grad "gradient" Ai
+  \grad
+
+snippet stst "Standard state" Ai
+  \stst 
+
+snippet neq "not equal" Ai
+  \neq 
+
+snippet molæ "molær" Ai
+  \;\unit{\textsc{m}} 
+
+snippet table "Table environment" b
+  \begin{table}[${1}]
+    \centering
+    \begin{tabular}{@{}l${5}@{}}
+    \toprule
+    $0${5/((?<=.)c|l|r)|./(?1: & )/g}
+    \bottomrule
+    \end{tabular}
+    \caption{${2}}
+    \label{tab:${3}}
+  \end{table}
+
+snippet mkc "Make cell" Ai
+  \makecell{${1}} $0
+
+snippet thead "Table header" Ai
+  \thead{${1}} $0
+
+snippet card "Cardinality" Ai
+  \card(${1}) $0
+
+snippet sim "sim" Ai
+  \sim 
+
+snippet subs "subset" Ai
+  \subset 
+
+snippet subseq "subseteq" Ai
+  \subseteq 
+
+snippet sups "superset" Ai
+  \supset 
+
+snippet infty "infinity" Ai
+  \infty 
+
+snippet cup "Cup" Ai
+  \cup 
+
+snippet cap "Cap" Ai
+  \cap 
+
+snippet sup "supremum" Ai
+  \sup 
+
+snippet inf "infimum" Ai
+  \inf 
+
+snippet mængde "{}" Ai
+  \{ ${1} \\} $0
+
+snippet overline "overline" Ai
+  \overline 
+
+snippet empty "empty set" Ai
+  \emptyset 
+
+snippet upint "upper integral" Ai
+  \upint_{${1}}^{${2}} ${3}  $0
+
+snippet lowint "lower integral" Ai
+  \lowint_{${1}}^{${2}} ${3} $0
+
+

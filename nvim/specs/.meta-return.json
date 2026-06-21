@@ -1,0 +1,21 @@
+{
+  "status": "tasks_created",
+  "summary": "Created 2 tasks for PR description workflow: #743 standardizes the AI Tools Used section across PR templates and agents, #744 adds pr-description.md inclusion in feature branches during /pr workflow.",
+  "artifacts": [
+    {
+      "type": "task_entry",
+      "path": "specs/TODO.md",
+      "summary": "Tasks #743 and #744 added to TODO.md"
+    }
+  ],
+  "metadata": {
+    "session_id": "sess_1750291200_meta01",
+    "duration_seconds": 120,
+    "agent_type": "meta-builder-agent",
+    "delegation_depth": 1,
+    "delegation_path": ["orchestrator", "meta", "meta-builder-agent"],
+    "mode": "prompt",
+    "tasks_created": 2
+  },
+  "next_steps": "Run /research 743 to begin research on foundational task"
+}

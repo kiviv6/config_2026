@@ -1,0 +1,220 @@
+{
+  "version": "1.1.0",
+  "next_project_number": 747,
+  "active_projects": [
+    {
+      "project_number": 746,
+      "project_name": "enforce_plan_checkbox_tracking",
+      "status": "completed",
+      "task_type": "meta",
+      "title": "Enforce plan checkbox tracking during implementation and orchestration",
+      "description": "Fix plan checkbox drift during /implement and /orchestrate by adding three enforcement mechanisms: (1) Strengthen the self-review gate in general-implementation-agent.md Stage 4D-ii — make it a hard requirement that any phase marked [COMPLETED] must have all - [ ] items checked off or annotated as deviations before proceeding. (2) Add a postflight plan-checkbox validation step in skill-implementer SKILL.md — after the agent finishes, compare completed work against unchecked plan items and auto-fix mismatches via Edit. (3) Extend the orchestrator handoff schema (.orchestrator-handoff.json) to include a subtasks_completed array (e.g. [\"1.1\", \"1.2\", \"2.1\"]) so the orchestrator has per-subtask visibility when dispatching successors. Files to modify: .claude/agents/general-implementation-agent.md, .claude/skills/skill-implementer/SKILL.md, .claude/skills/skill-orchestrate/SKILL.md, .claude/context/patterns/orchestrator-handoff.md (if exists)",
+      "topic": "agent-system",
+      "dependencies": [],
+      "artifacts": [
+        {
+          "path": "specs/746_enforce_plan_checkbox_tracking/reports/01_plan-checkbox-tracking.md",
+          "type": "report",
+          "summary": "01_plan-checkbox-tracking.md"
+        },
+        {
+          "path": "specs/746_enforce_plan_checkbox_tracking/reports/01_plan-checkbox-tracking.md",
+          "type": "report",
+          "summary": "Research report with exact insertion points for all three enforcement mechanisms"
+        },
+        {
+          "path": "specs/746_enforce_plan_checkbox_tracking/plans/01_plan-checkbox-tracking.md",
+          "type": "plan",
+          "summary": "01_plan-checkbox-tracking.md"
+        },
+        {
+          "path": "specs/746_enforce_plan_checkbox_tracking/plans/01_plan-checkbox-tracking.md",
+          "type": "plan",
+          "summary": "3-phase plan: harden self-review gate, add postflight checkbox scan, extend handoff schema"
+        },
+        {
+          "path": "specs/746_enforce_plan_checkbox_tracking/summaries/01_plan-checkbox-tracking-summary.md",
+          "type": "summary",
+          "summary": "01_plan-checkbox-tracking-summary.md"
+        },
+        {
+          "path": "specs/746_enforce_plan_checkbox_tracking/summaries/01_plan-checkbox-tracking-summary.md",
+          "type": "summary",
+          "summary": "Execution summary for plan checkbox tracking enforcement"
+        }
+      ],
+      "created": "2026-06-19T00:00:00Z",
+      "last_updated": "2026-06-19T20:58:52Z",
+      "session_id": "sess_1750362000_a7b3c1",
+      "completion_summary": "Added three plan checkbox enforcement mechanisms: hardened Stage 4D-ii self-review gate, added postflight checkbox scan in skill-implementer, extended orchestrator handoff schema with subtasks_completed"
+    },
+    {
+      "project_number": 745,
+      "project_name": "defer_orchestrate_commits",
+      "status": "completed",
+      "task_type": "meta",
+      "title": "Defer orchestrate commits until first implementation cycle",
+      "description": "Modify /orchestrate commit behavior: (1) In skill-orchestrate SKILL.md Stage 5, add a git commit after each implementation dispatch (status=implemented or partial with phases_completed>0), bundling all uncommitted artifacts from prior research/plan cycles. Skip commits for researched/planned statuses. (2) In orchestrate.md CHECKPOINT 3, make the final commit conditional — only commit if there are uncommitted changes (avoid empty/duplicate commits when per-implementation-cycle commits already captured everything). Files to modify: .claude/skills/skill-orchestrate/SKILL.md, .claude/commands/orchestrate.md",
+      "topic": "agent-system",
+      "dependencies": [],
+      "artifacts": [
+        {
+          "path": "specs/745_defer_orchestrate_commits/reports/01_defer-commits.md",
+          "type": "report",
+          "summary": "01_defer-commits.md"
+        },
+        {
+          "path": "specs/745_defer_orchestrate_commits/reports/01_defer-commits.md",
+          "type": "report",
+          "summary": "Full commit-flow analysis with exact insertion locations, decision table, edge cases, and recommended approach"
+        },
+        {
+          "path": "specs/745_defer_orchestrate_commits/plans/01_defer-commits-plan.md",
+          "type": "plan",
+          "summary": "01_defer-commits-plan.md"
+        },
+        {
+          "path": "specs/745_defer_orchestrate_commits/plans/01_defer-commits-plan.md",
+          "type": "plan",
+          "summary": "3-phase plan: per-cycle commit in skill-orchestrate Stage 5, conditional CHECKPOINT 3, conditional multi-task batch commit"
+        },
+        {
+          "path": "specs/745_defer_orchestrate_commits/summaries/01_defer-commits-summary.md",
+          "type": "summary",
+          "summary": "01_defer-commits-summary.md"
+        },
+        {
+          "path": "specs/745_defer_orchestrate_commits/summaries/01_defer-commits-summary.md",
+          "type": "summary",
+          "summary": "Implementation summary: deferred orchestrate commits to implementation cycles"
+        }
+      ],
+      "created": "2026-06-19T00:00:00Z",
+      "last_updated": "2026-06-19T19:48:06Z",
+      "session_id": "sess_1781898027_924b47",
+      "completion_summary": "Modified /orchestrate commit behavior: per-implementation-cycle commits in skill-orchestrate Stage 5, conditional CHECKPOINT 3 and multi-task batch commits in orchestrate.md"
+    },
+    {
+      "project_number": 87,
+      "project_name": "investigate_wezterm_terminal_directory_change",
+      "status": "researched",
+      "task_type": "neovim",
+      "created": "2026-02-13T21:37:24Z",
+      "last_updated": "2026-02-13T21:42:25Z",
+      "session_id": "sess_1771018686_143ebc",
+      "artifacts": [
+        {
+          "type": "research",
+          "path": "specs/087_investigate_wezterm_terminal_directory_change/reports/research-001.md",
+          "summary": "Comprehensive analysis of Neovim and WezTerm configurations showing no automatic directory-changing behavior"
+        }
+      ],
+      "title": "Investigate terminal directory change when opening neovim in wezterm",
+      "description": "Investigate why the terminal working directory changes to a project root when opening neovim sessions in wezterm from the home directory (~). Determine whether this behavior is caused by neovim or wezterm (configured in ~/.dotfiles/config/). Identify if any functionality depends on this behavior before modifying it. Goal is to avoid changing the terminal directory unless necessary.",
+      "effort": "TBD",
+      "topic": "Terminal UI",
+      "dependencies": []
+    },
+    {
+      "project_number": 78,
+      "project_name": "fix_himalaya_smtp_authentication_failure",
+      "status": "planned",
+      "task_type": "neovim",
+      "effort": "1-2 hours",
+      "created": "2026-02-13T18:01:13Z",
+      "last_updated": "2026-02-13T18:10:48Z",
+      "dependencies": [],
+      "artifacts": [
+        {
+          "type": "research",
+          "path": "specs/078_fix_himalaya_smtp_authentication_failure/reports/research-001.md",
+          "summary": "Research report documenting OAuth2 token expiration as root cause and fix procedure"
+        },
+        {
+          "path": "specs/078_fix_himalaya_smtp_authentication_failure/plans/implementation-001.md",
+          "type": "plan",
+          "summary": "3-phase implementation plan for fixing Gmail OAuth2 authentication"
+        }
+      ],
+      "session_id": "sess_1771006114_e73864",
+      "planned": "2026-02-13T18:10:48Z",
+      "title": "Fix Himalaya SMTP authentication failure when sending emails",
+      "description": "Fix Gmail SMTP authentication failure when sending emails via Himalaya (<leader>me). Error: Authentication failed: Code: 535, Enhanced code: 5.7.8, Message: Username and Password not accepted. The error occurs with TLS connection attempts and persists through multiple retry attempts. Identify and fix the root cause of the SMTP credential configuration.",
+      "topic": "Email Integration"
+    },
+    {
+      "project_number": 743,
+      "project_name": "standardize_ai_tools_used_section",
+      "status": "completed",
+      "task_type": "meta",
+      "title": "Standardize AI Tools Used section across PR templates and agents",
+      "description": "Fix inconsistent ## AI Tools Used section in PR description generation. Three files need changes: (1) cslib-implementation-agent.md -- replace the vague [describe what it did] placeholder with a reference to the canonical template in pr-description-format.md; (2) pr.md command -- change ## AI Disclosure heading to ## AI Tools Used in the Step 9 path/description template, and align text with the canonical format; (3) pr-description-format.md is already correct (canonical source, no changes needed). Files to modify: .claude/extensions/cslib/agents/cslib-implementation-agent.md, .claude/extensions/cslib/commands/pr.md",
+      "topic": "agent-system",
+      "dependencies": [],
+      "artifacts": [
+        {
+          "path": "specs/743_standardize_ai_tools_used_section/reports/01_ai-tools-standardization.md",
+          "type": "report",
+          "summary": "01_ai-tools-standardization.md"
+        },
+        {
+          "path": "specs/743_standardize_ai_tools_used_section/plans/01_ai-tools-plan.md",
+          "type": "plan",
+          "summary": "3-phase plan to standardize AI Tools Used section across cslib-implementation-agent.md and pr.md"
+        }
+      ],
+      "created": "2026-06-18T00:00:00Z",
+      "last_updated": "2026-06-19T00:27:13Z",
+      "session_id": "sess_1750291300_743"
+    },
+    {
+      "project_number": 744,
+      "project_name": "include_pr_description_in_feature_branch",
+      "status": "completed",
+      "task_type": "meta",
+      "title": "Include pr-description.md in feature branch during /pr workflow",
+      "description": "Modify the /pr command to copy pr-description.md from specs/{NNN}_{SLUG}/ into the cslib repo (e.g., as pr-description.md at repo root) after STEP 9 and before STEP 10. The file should be left unstaged (not git-added) so the user can review the full PR description alongside the code changes before pushing. This gives the user a convenient way to inspect the PR description in the context of the feature branch. Files to modify: .claude/extensions/cslib/commands/pr.md",
+      "topic": "agent-system",
+      "dependencies": [
+        743
+      ],
+      "artifacts": [
+        {
+          "path": "specs/744_include_pr_description_in_feature_branch/reports/01_pr-description-copy.md",
+          "type": "report",
+          "summary": "01_pr-description-copy.md"
+        },
+        {
+          "path": "specs/744_include_pr_description_in_feature_branch/plans/01_pr-description-copy-plan.md",
+          "type": "plan",
+          "summary": "01_pr-description-copy-plan.md"
+        }
+      ],
+      "created": "2026-06-18T00:00:00Z",
+      "last_updated": "2026-06-19T00:29:38Z",
+      "session_id": "sess_1750291300_744"
+    }
+  ],
+  "completed_projects": [],
+  "repository_health": {
+    "last_assessed": "2026-06-17T21:24:15Z",
+    "todo_count": 44,
+    "fixme_count": 2,
+    "build_errors": 0,
+    "status": "healthy"
+  },
+  "memory_health": {
+    "last_distilled": null,
+    "distill_count": 0,
+    "total_memories": 3,
+    "never_retrieved": 2,
+    "health_score": 100,
+    "status": "healthy"
+  },
+  "active_topics": [
+    "wezterm-notifications",
+    "workflow-refactor",
+    "agent-system",
+    "literature"
+  ]
+}
