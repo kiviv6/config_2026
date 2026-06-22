@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["hyprland/workspaces", "group/media"],
     "modules-center": ["clock"],
-    "modules-right": ["hyprland/submap", "group/volume", "battery", "bluetooth", "network", "cpu", "memory"],
+    "modules-right": ["custom/fcitx5", "hyprland/submap", "group/volume", "battery", "bluetooth", "network", "cpu", "memory"],
     "hyprland/window": {
         "max-length": 50
     },
@@ -104,5 +104,12 @@
       "escape": true,
       "interval": 1,
       "tooltip": false,
-    }
+    },
+    "custom/fcitx5": {
+    "exec": "~/.config/waybar/custom_modules/fcitx5/fcitx5-status.sh",
+    "interval": 1,
+    "format": "{}",
+    "tooltip": false,
+    "on-click": "fcitx5-configtool"
+  }
 }
