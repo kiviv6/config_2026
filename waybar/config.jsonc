@@ -89,8 +89,9 @@
     },
     "custom/media-now-playing": {
       "exec": "~/.config/waybar/custom_modules/media/media-now-playing.sh",
+      "return-type": "json",
+      "format": "{}",
       "escape": true,
-      "tooltip": false,
       "on-click": "playerctl play-pause",
       "on-click-middle": "playerctl previous",
       "on-click-right": "playerctl next",
