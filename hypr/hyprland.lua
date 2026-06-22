@@ -44,7 +44,7 @@ local fileManager = "kitty -e yazi"
 local launcher        = "rofi -show drun -show-icons"
 local wallpaper = "kitty -e WallRizz -d ~/.config/wallpapers"
 local browser = "brave"
-local music = "spotify"
+local music = "kitty -e termusic"
 
 
 -------------------
@@ -77,6 +77,7 @@ end)
 hl.env("XCURSOR_SIZE", "30")
 hl.env("HYPRCURSOR_SIZE", "30")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("QT_SCREEN_SCALE_FACTOR", "4")
 hl.env("WINIT_X11_SCALE_FACTOR", "1")
 hl.env("GTK_IM_MODULE","fcitx")
 hl.env("QT_IM_MODULE","fcitx")
@@ -115,8 +116,8 @@ hl.config({
         border_size = 3,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = { colors = {"rgb(235, 188, 186)", "rgb(49, 116, 143)", "rgb(235, 111, 146)", "rgb(196, 167, 231)"}, angle = 90 },
+            inactive_border = "rgb(110, 106, 134)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
