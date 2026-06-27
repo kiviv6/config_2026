@@ -302,6 +302,7 @@ hl.bind(secondMod .. " + R", hl.dsp.exec_cmd("hyprshutdown -t 'Restarting...' --
 hl.bind(secondMod .. " + Q", hl.dsp.exec_cmd("hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'"))
 hl.bind("CONTROL + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy && wtype -M ctrl -k v -m ctrl"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
+hl.bind(secondMod .. "+ L", hl.dsp.exec_cmd("hyprlock"))
 
 -- closeWindowBind:set_enabled(false)
 hl.bind(secondMod .. " + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
