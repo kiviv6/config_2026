@@ -398,6 +398,11 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    match = { class = "firefox" },
+    opaque = true,
+})
+
+hl.window_rule({
     name = "pseudo",
     match = { class = "^fcitx$" }
 })
