@@ -58,6 +58,7 @@ local music = "kitty -e termusic"
 --
 hl.on("hyprland.start", function () 
    hl.exec_cmd("waybar")
+   hl.exec_cmd("hypridle")
    hl.exec_cmd("systemctl --user start hyprpolkitagent")
    hl.exec_cmd("hyprctl setcursor BreezeX-RosePine-Linux 30")
    hl.exec_cmd("awww-daemon")
@@ -400,6 +401,11 @@ hl.window_rule({
 
 hl.window_rule({
     match = { class = "firefox" },
+    opaque = true,
+})
+
+hl.window_rule({
+    match = { class = "anki"},
     opaque = true,
 })
 
