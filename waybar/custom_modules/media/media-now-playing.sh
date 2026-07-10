@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-MAX_LEN=30
+MAX_LEN=25
 
 playerctl --follow metadata --format '{{markup_escape(title)}}|{{markup_escape(artist)}}' 2>/dev/null | while IFS='|' read -r title artist; do
     title=$(echo "$title" | xargs)
