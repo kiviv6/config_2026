@@ -166,6 +166,7 @@ if ok_wk then
   -- Template mappings
   wk.add({
     { "<leader>T", group = "templates", icon = "󰈭", buffer = 0 },
+    { "<leader>Tq", "<cmd>read ~/.config/nvim/templates/gym.tex<CR>", desc = "gym.tex", icon = "󰈙", buffer = 0 },
     { "<leader>Ta", "<cmd>read ~/.config/nvim/templates/article.tex<CR>", desc = "article.tex", icon = "󰈙", buffer = 0 },
     { "<leader>Tb", "<cmd>read ~/.config/nvim/templates/beamer_slides.tex<CR>", desc = "beamer_slides.tex", icon = "󰈙", buffer = 0 },
     { "<leader>Tg", "<cmd>read ~/.config/nvim/templates/glossary.tex<CR>", desc = "glossary.tex", icon = "󰈙", buffer = 0 },
