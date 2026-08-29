@@ -323,6 +323,29 @@ hl.bind(secondMod .. " + J",  hl.dsp.window.move({ direction = "down" }))
 
 hl.bind(secondMod .. " + F", hl.dsp.window.fullscreen({action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({mode = "maximized" }))
+local default_gaps_in = 5
+local default_gaps_out = 10
+local default_bordersize = 3
+hl.bind(mainMod .. " + G", function()
+    local gaps_table = hl.get_config("general.gaps_in")
+    if gaps_table.top == 0 then
+        hl.config({
+            general = {
+                gaps_in = default_gaps_in,
+                gaps_out = default_gaps_out,
+                border_size = default_bordersize
+            }
+        })
+    else
+        hl.config({
+            general = {
+                gaps_in = 0,
+                gaps_out = 0,
+                border_size = 0
+            }
+        })
+    end
+end)
 
 
 -- Switch workspaces with mainMod + [0-9]
