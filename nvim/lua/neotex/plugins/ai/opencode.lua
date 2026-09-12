@@ -16,21 +16,15 @@ return {
     },
   },
   init = function()
-    -- Only non-function options can go in vim.g (Neovim serializes vim.g to msgpack;
-    -- functions are dropped silently). Server functions are set in config() below.
-    vim.g.opencode_opts = {
-      events = {
-        enabled = true,
-        reload = true,
-        permissions = {
-          enabled = false, -- Disable permission UI to prevent prompts
-        },
+  vim.g.opencode_opts = {
+    events = {
+      permissions = {
+        enabled = false,
       },
-    }
-
-    -- Enable autoread for buffer reloading
-    vim.o.autoread = true
-  end,
+    },
+  }
+  vim.o.autoread = true
+end,
   config = function()
     -- Set server functions directly on opts (bypasses vim.g serialization limitation)
     local opts = require("opencode.config").opts
